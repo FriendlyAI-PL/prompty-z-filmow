@@ -401,3 +401,9 @@ Notatki z wideo/
 3. **Jeśli coś nie działa**: Nie panikuj. Wklej treść błędu do Claude Code z prośbą o naprawienie. Claude Code widzi kod i potrafi zdiagnozować problem.
 
 4. **Model Claude w generate_notes.py**: Prompt wskazuje `claude-sonnet-4-6`. Można go użyć, bo jest szybszy, tańszy niż Opus, a różnica w notatkach jest niewielka. Można to zmienić w kodzie lub poprosić o to AI (ale to zużyje limity).
+
+---
+
+## Autor
+
+**Adam Kopeć** — [friendlyai.pl](https://www.friendlyai.pl/) · [YouTube](https://www.youtube.com/@Friendly_AI_PL)

@@ -476,3 +476,9 @@ Błąd: {'type': 'error': {'details': None; 'overloaded_error', 'message': 'Over
 > **Co tu zadziałało:** to nie był "prompt do naprawy" — to surowy komunikat błędu z konsoli, wklejony bezpośrednio bez żadnego opisu. Claude Code sam rozpoznał, że API Anthropic było chwilowo przeciążone (`overloaded_error`) i dodał do kodu obsługę ponawiania zapytania po krótkiej przerwie.
 >
 > **Wniosek:** możesz wkleić dowolny komunikat błędu — JSON, stack trace, wyjątek Pythona — Claude Code go zrozumie i zaproponuje poprawkę. Nie musisz go tłumaczyć ani opisywać.
+
+---
+
+## Autor
+
+**Adam Kopeć** — [friendlyai.pl](https://www.friendlyai.pl/) · [YouTube](https://www.youtube.com/@Friendly_AI_PL)

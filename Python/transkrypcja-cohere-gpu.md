@@ -448,3 +448,9 @@ Plik `nagranie.txt` znajdziesz w folderze `C:\Transkrypcja`. Każda linia zawier
 ## Licencja i źródło modelu
 
 Model `CohereLabs/cohere-transcribe-03-2026` jest udostępniany przez Cohere Labs na warunkach widocznych na stronie modelu w Hugging Face. Skrypt z tej instrukcji jest do wykorzystania bez ograniczeń.
+
+---
+
+## Autor
+
+**Adam Kopeć** — [friendlyai.pl](https://www.friendlyai.pl/) · [YouTube](https://www.youtube.com/@Friendly_AI_PL)
