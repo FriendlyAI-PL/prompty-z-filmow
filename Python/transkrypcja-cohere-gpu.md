@@ -80,6 +80,9 @@ py -0
 2. Na samym dole strony, w tabeli "Files", pobierz **Windows installer (64-bit)**, czyli plik `python-3.12.10-amd64.exe`
 3. Uruchom pobrany instalator
 4. **Bardzo ważne:** na pierwszym ekranie zaznacz checkbox **„Add python.exe to PATH"** na samym dole. Bez tego komendy z dalszej części instrukcji nie zadziałają
+
+   ![Zaznacz "Add python.exe to PATH" podczas instalacji](images/python-install-path.jpg)
+
 5. Kliknij **„Install Now"** i poczekaj, aż instalator skończy
 
 ### Sprawdzenie, czy działa
