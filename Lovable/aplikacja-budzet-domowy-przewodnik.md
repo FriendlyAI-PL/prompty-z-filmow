@@ -2,9 +2,11 @@
 
 Instrukcja krok po kroku, jak zbudować osobisty tracker wydatków domowych z AI w [Lovable](https://lovable.dev) — bez pisania kodu.
 
-**Czas realizacji:** ~30–45 minut
-**Wymagania:** Konto w Lovable (darmowe)
+**Czas realizacji:** ~20–30 minut
+**Wymagania:** Konto w Lovable (darmowe) — instrukcja wymaga ~15–20 kredytów łącznie (złożone prompty kosztują więcej niż 1 kredyt)
 **Efekt końcowy:** Działająca aplikacja z bazą danych, analizą AI, wykresami i tabelą wydatków
+
+> ⚠️ **Darmowy plan Lovable: 5 kredytów dziennie.** Przed każdym promptem sprawdź stan w **Settings → Workspace → Usage**. Wysłanie prompta przy niewystarczającej liczbie kredytów może przerwać generowanie w połowie i zostawić kod w niespójnym stanie.
 
 ![Coin Sage — widok główny](images/Coin%20sage%20screenshot.png)
 
@@ -18,8 +20,9 @@ Instrukcja krok po kroku, jak zbudować osobisty tracker wydatków domowych z AI
 4. [Krok 4: Nawigacja po miesiącach](#krok-4-nawigacja-po-miesiącach)
 5. [Krok 5: Edycja i filtrowanie transakcji](#krok-5-edycja-i-filtrowanie-transakcji)
 6. [Krok 6: Waluta i porównanie miesięczne](#krok-6-waluta-i-porównanie-miesięczne)
-7. [Podsumowanie](#podsumowanie)
-8. [📋 Przykładowe dane do testowania](#przykładowe-dane-do-testowania)
+7. [Krok 7: Analiza AI dashboardu (opcjonalny)](#krok-7-analiza-ai-dashboardu-opcjonalny)
+8. [Funkcjonalności aplikacji](#funkcjonalności-aplikacji)
+9. [📋 Przykładowe dane do testowania](#przykładowe-dane-do-testowania)
 
 ---
 
@@ -371,9 +374,46 @@ Dodaj badge z porównaniem do poprzedniego miesiąca w karcie "Suma wydatków":
 
 ---
 
-## Podsumowanie
+## Krok 7: Analiza AI dashboardu (opcjonalny)
 
-### Co mamy po 6 krokach:
+**Co robimy:** Wypełniamy kartę "Analiza AI ❋" na dashboardzie — po dodaniu transakcji AI automatycznie generuje krótkie wnioski o wydatkach danego miesiąca.
+
+> 💡 **Krok opcjonalny** — karta istnieje od Kroku 1, ale pozostaje pusta bez tego prompta. Możesz go pominąć, jeśli chcesz zaoszczędzić kredyty.
+
+**Co można zmienić:**
+
+- Liczbę i charakter spostrzeżeń w prompcie systemowym
+- Maksymalną długość odpowiedzi (domyślnie: 120 słów)
+
+**Częste problemy Lovable:**
+
+- ⚠️ Karta może pozostać pusta po dodaniu transakcji — sprawdź czy `analyze-spending` jest wywoływana w `useEffect` po zmianie listy transakcji lub wybranego miesiąca
+- ⚠️ Analiza może się nie odświeżać po zmianie miesiąca strzałkami — upewnij się, że `selectedMonth` i `selectedYear` są w tablicy zależności `useEffect`
+
+```
+Wypełnij kartę "Analiza AI ❋" na dashboardzie:
+
+1. Stwórz edge function "analyze-spending":
+   - Wywoływana automatycznie po załadowaniu transakcji i po każdej zmianie
+     (dodanie, usunięcie transakcji, zmiana miesiąca) dla aktualnie wybranego miesiąca
+   - Przyjmuje: listę transakcji [{description, amount, category, date}] + język (EN/PL)
+   - Jeśli lista jest pusta — nie wywołuje funkcji, karta zostaje w pustym stanie
+   - Prompt systemowy do AI: "Przeanalizuj poniższe wydatki i napisz 3–4 konkretne
+     spostrzeżenia w języku [EN/PL]: która kategoria dominuje, czy widać
+     nieoczekiwane wydatki, jedna praktyczna sugestia oszczędności.
+     Odpowiedź w formacie markdown, max 120 słów."
+   - Klucz API wyłącznie po stronie serwera — użyj istniejącego Lovable Cloud
+
+2. Wynik wyświetl w karcie "Analiza AI ❋" jako sformatowany markdown
+3. Podczas generowania: skeleton loader (animowane linie) zamiast pustego stanu
+4. Po błędzie: "Analiza niedostępna — spróbuj ponownie." (bez ikony crash)
+```
+
+---
+
+## Funkcjonalności aplikacji
+
+### Co mamy po 7 krokach:
 
 | Funkcja        | Opis                                                   |
 | -------------- | ------------------------------------------------------ |
@@ -386,6 +426,7 @@ Dodaj badge z porównaniem do poprzedniego miesiąca w karcie "Suma wydatków":
 | 🔍 Filtry      | Filtrowanie tabeli po kategorii, dacie, kwocie         |
 | 💱 Waluta      | Automatyczna zmiana $ ↔ zł przy zmianie języka         |
 | 📈 Porównanie  | Prawdziwy % zmiany vs poprzedni miesiąc                |
+| 💡 Analiza AI  | Automatyczne wnioski o wydatkach miesiąca (opcjonalne) |
 
 ### 📋 Przykładowe dane do testowania
 
