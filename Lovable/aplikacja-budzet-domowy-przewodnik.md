@@ -398,10 +398,15 @@ Wypełnij kartę "Analiza AI ❋" na dashboardzie:
      (dodanie, usunięcie transakcji, zmiana miesiąca) dla aktualnie wybranego miesiąca
    - Przyjmuje: listę transakcji [{description, amount, category, date}] + język (EN/PL)
    - Jeśli lista jest pusta — nie wywołuje funkcji, karta zostaje w pustym stanie
-   - Prompt systemowy do AI: "Przeanalizuj poniższe wydatki i napisz 3–4 konkretne
-     spostrzeżenia w języku [EN/PL]: która kategoria dominuje, czy widać
-     nieoczekiwane wydatki, jedna praktyczna sugestia oszczędności.
-     Odpowiedź w formacie markdown, max 120 słów."
+   - Prompt systemowy do AI: "Przeanalizuj poniższe wydatki i zwróć dokładnie
+     3 spostrzeżenia w języku [EN/PL]. Każde spostrzeżenie to jedna linia
+     zaczynająca się od odpowiedniego emoji, np.:
+     🛍️ Shopping is 21% of your spending
+     ⚠️ You have 2 transactions over $100 this month
+     💡 Your biggest expense is $210.00 for Booking.com
+     Zasady: tylko 3 linie, żadnego markdown (bez *, **, #), żadnych nagłówków,
+     żadnych dodatkowych komentarzy — wyłącznie 3 linie z emoji.
+     Używaj konkretnych liczb z danych."
    - Klucz API wyłącznie po stronie serwera — użyj istniejącego Lovable Cloud
 
 2. Wynik wyświetl w karcie "Analiza AI ❋" jako sformatowany markdown
