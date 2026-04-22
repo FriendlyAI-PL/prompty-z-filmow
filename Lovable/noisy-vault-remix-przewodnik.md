@@ -29,7 +29,7 @@ Instrukcja krok po kroku, jak zremiksować gotową aplikację [Noisy Vault](http
 
 **Kroki:**
 
-1. Wejdź na stronę projektu: [https://lovable.dev/projects/63239106-63fa-4c6a-8bb4-250664eb1121](https://lovable.dev/projects/63239106-63fa-4c6a-8bb4-250664eb1121)
+1. Wejdź na stronę projektu: [https://lovable.dev/projects/63239106-63fa-4c6a-8bb4-250664eb1121](https://lovable.dev/projects/63239106-63fa-4c6a-8bb4-250664eb1121?magic_link=mc_4e9e997f-a798-4c0c-a317-b9cecbd5e8d4)
 2. Kliknij przycisk **"Remix"** w prawym górnym rogu
 3. Zaloguj się lub utwórz konto w Lovable (jeśli jeszcze nie masz)
 4. Poczekaj chwilę — Lovable skopiuje projekt i przeniesie Cię do nowego edytora
@@ -115,18 +115,6 @@ ORDER BY sort_order;
 ```
 
 Skopiuj wyniki z okna poniżej zapytania — to będą gotowe instrukcje INSERT do wklejenia w następnym kroku.
-
-
-**Przykładowy wynik — INSERT dla `categories`:**
-
-```sql
-INSERT INTO categories (id, name, icon, color, default_view, fields_schema, sort_order, created_at) VALUES ('7a2a42d3-3949-4565-9f7b-02913b4d29d1', 'Narzędzia / Strony', '🔧', '#3b82f6', 'table', '{"fields": [{"key": "url", "type": "url", "label": "Link", "required": true}, {"key": "domain", "type": "select", "label": "Dziedzina", "options": ["AI", "Design", "Wideo", "Pisanie", "Dev", "Inne"]}, {"key": "is_free", "type": "select", "label": "Bezpłatne", "options": ["Tak", "Tak / Płatne rozszerzenie", "Nie"], "required": true}, {"key": "notes", "type": "textarea", "label": "Notatki"}]}'::jsonb, 1, '2026-04-19 18:20:20.613788+00');
-INSERT INTO categories (id, name, icon, color, default_view, fields_schema, sort_order, created_at) VALUES ('c0668abe-b1c8-48d6-aa65-745fe24b3009', 'Prompty', '💬', '#a855f7', 'table', '{"fields": [{"key": "prompt_text", "type": "textarea", "label": "Treść promptu", "required": true}, {"key": "use_case", "type": "text", "label": "Zastosowanie", "required": false}, {"key": "output_example", "type": "textarea", "label": "Przykład wyniku", "required": false}]}'::jsonb, 2, '2026-04-19 18:20:20.613788+00');
-INSERT INTO categories (id, name, icon, color, default_view, fields_schema, sort_order, created_at) VALUES ('4905c8bb-1f5c-4986-b2a0-b8a877b430cc', 'Wpisy', '📝', '#10b981', 'table', '{"fields": [{"key": "content", "type": "textarea", "label": "Treść", "required": true}, {"key": "source_url", "type": "url", "label": "Źródło"}, {"key": "topic", "type": "text", "label": "Temat"}]}'::jsonb, 3, '2026-04-19 18:20:20.613788+00');
-INSERT INTO categories (id, name, icon, color, default_view, fields_schema, sort_order, created_at) VALUES ('7ba75482-4a09-4335-9b08-4bcf0b3aa304', 'Filmy YT', '🎬', '#ef4444', 'cards', '{"fields": [{"key": "youtube_url", "type": "youtube", "label": "Link YouTube", "required": true}, {"key": "channel", "type": "text", "label": "Kanał", "required": false}, {"key": "description", "type": "textarea", "label": "Opis", "required": false}, {"key": "duration", "type": "text", "label": "Czas trwania", "required": false}, {"key": "published_at", "type": "date", "label": "Data publikacji", "required": false}, {"key": "my_notes", "type": "textarea", "label": "Moje notatki", "required": false}, {"key": "thumbnail_url", "type": "image_url", "label": "Miniatura", "required": false}]}'::jsonb, 4, '2026-04-19 18:20:20.613788+00');
-INSERT INTO categories (id, name, icon, color, default_view, fields_schema, sort_order, created_at) VALUES ('b96cb6db-45ff-4af5-ac6b-d3d25d313268', 'Książki', '📁', '#33dd95', 'table', '{"fields": [{"key": "autor", "type": "text", "label": "Autor", "required": true}, {"key": "polecam", "type": "select", "label": "Polecam", "options": ["Tak", "średnio", "Bardzo polecam"], "required": false}]}'::jsonb, 5, '2026-04-19 20:48:25.955935+00');
-```
-
 
 **Częste problemy:**
 
