@@ -1,6 +1,6 @@
 # Nauka z AI: praktyczny przewodnik
 
-![Nauka z AI — przewodnik](images/Nauka%20z%20AI.png)
+![Nauka z AI — przewodnik](images/Nauka%20z%20AI%20kawaii.png)
 
 Techniki opisane w tym pliku nie wzięły się z powietrza. Feynman, active recall, spaced repetition, dialog sokratyjski. Każdą z nich badano dziesiątki lat przed erą AI i każda z nich wygrywała porównania z biernym czytaniem, powtórnym czytaniem i tradycyjnym "kucia na pamięć". AI nie zmienił tego, co działa w nauce, ale sprawił, że te techniki są dostępne bez korepetytora, bez grupy nauki i bez specjalnych warunków.
 
