@@ -8,23 +8,23 @@ Techniki opisane w tym pliku nie wzięły się z powietrza. Feynman, active reca
 
 ## Spis treści
 
-1. [Zanim zaczniesz: dwie rzeczy ważniejsze niż wszystkie narzędzia razem wzięte](#1-zanim-zaczniesz)
+1. [Zanim zaczniesz: dwie rzeczy ważniejsze niż wszystkie narzędzia razem wzięte](#1-zanim-zaczniesz-dwie-rzeczy-ważniejsze-niż-wszystkie-narzędzia-razem-wzięte)
    - Systematyczność bije wszystko
    - Mózg uczy się emocjami, nie powtórzeniami
-2. [4 techniki, które naprawdę warto znać](#2-4-techniki)
+2. [Cztery techniki, które naprawdę warto znać](#2-cztery-techniki-które-naprawdę-warto-znać)
    - Technika Feynmana
    - Active recall + spaced repetition
    - Dialog sokratyjski
    - Quiz z wyjaśnieniem każdej odpowiedzi
-3. [Stack narzędzi: trzy aplikacje, koniec](#3-stack-narzędzi)
-4. [NotebookLM: jak wyciągnąć z niego więcej](#4-notebooklm)
+3. [Stack narzędzi: trzy aplikacje, koniec](#3-stack-narzędzi-trzy-aplikacje-koniec)
+4. [NotebookLM: jak wyciągnąć z niego więcej](#4-notebooklm-jak-wyciągnąć-z-niego-więcej)
    - Audio Overview
    - Prezentacja
    - Quiz
    - Fiszki
    - Rozmowa z notatnikiem
-5. [Workflow: od PDF do egzaminu w 3 tygodniach](#5-workflow)
-6. [5 zasad i 3 pułapki](#6-zasady-i-pułapki)
+5. [Workflow: od PDF do egzaminu w 3 tygodniach](#5-workflow-od-pdf-do-egzaminu-w-3-tygodniach)
+6. [Pięć zasad i trzy pułapki](#6-pięć-zasad-i-trzy-pułapki)
 
 ---
 
