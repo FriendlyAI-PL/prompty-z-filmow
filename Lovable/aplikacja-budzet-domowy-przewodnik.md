@@ -435,44 +435,44 @@ Wypełnij kartę "Analiza AI ❋" na dashboardzie:
 
 ### 📋 Przykładowe dane do testowania
 
-Skopiuj i wklej do pola tekstowego w modalu "+ Dodaj wydatki". Zacznij od **lutego**, żeby porównanie miesięczne działało poprawnie od razu.
+Skopiuj i wklej do pola tekstowego w modalu "+ Dodaj wydatki". Zacznij od **kwietnia**, żeby porównanie miesięczne działało poprawnie od razu.
+
+**Czerwiec:**
+
+```
+Biedronka 67,50 zł 1 cze, Żabka 8,40 zł 2 cze, Uber 12,30 zł 3 cze,
+Spotify 9,99 zł 3 cze, Orlen 58 zł 5 cze, Netflix 15,99 zł 6 cze,
+Empik 27,90 zł 7 cze, Apteka Dbam o Zdrowie 34,50 zł 8 cze,
+OLX dostawa 6,50 zł 9 cze, Allegro 43,20 zł 9 cze,
+McDonald's 22,80 zł 10 cze, Siłownia 49 zł 11 cze,
+Rossmann 31,60 zł 12 cze, Play 45 zł 13 cze,
+Prąd 119 zł 14 cze, H&M 89 zł 15 cze,
+Lidl 54,30 zł 17 cze, Booking.com 210 zł 19 cze
+```
+
+**Maj:**
+
+```
+Żabka 6,20 zł 2 maj, Biedronka 71,40 zł 3 maj, Netflix 15,99 zł 5 maj,
+Allegro 38,50 zł 6 maj, Orlen 54 zł 8 maj, Siłownia 49 zł 9 maj,
+Rossmann 28,30 zł 10 maj, Uber 9,80 zł 11 maj,
+McDonald's 31,50 zł 13 maj, Play 45 zł 14 maj,
+Lidl 62,10 zł 15 maj, Empik 19,90 zł 16 maj,
+Spotify 9,99 zł 17 maj, Apteka Dbam o Zdrowie 41,20 zł 19 maj,
+Prąd 108 zł 20 maj, H&M 67 zł 22 maj,
+Amazon 54,30 zł 25 maj, Ikea 129 zł 27 maj
+```
 
 **Kwiecień:**
 
 ```
-Biedronka 67,50 zł 1 kwi, Żabka 8,40 zł 2 kwi, Uber 12,30 zł 3 kwi,
-Spotify 9,99 zł 3 kwi, Orlen 58 zł 5 kwi, Netflix 15,99 zł 6 kwi,
-Empik 27,90 zł 7 kwi, Apteka Dbam o Zdrowie 34,50 zł 8 kwi,
-OLX dostawa 6,50 zł 9 kwi, Allegro 43,20 zł 9 kwi,
-McDonald's 22,80 zł 10 kwi, Siłownia 49 zł 11 kwi,
-Rossmann 31,60 zł 12 kwi, Play 45 zł 13 kwi,
-Prąd 119 zł 14 kwi, H&M 89 zł 15 kwi,
-Lidl 54,30 zł 17 kwi, Booking.com 210 zł 19 kwi
-```
-
-**Marzec:**
-
-```
-Żabka 6,20 zł 2 mar, Biedronka 71,40 zł 3 mar, Netflix 15,99 zł 5 mar,
-Allegro 38,50 zł 6 mar, Orlen 54 zł 8 mar, Siłownia 49 zł 9 mar,
-Rossmann 28,30 zł 10 mar, Uber 9,80 zł 11 mar,
-McDonald's 31,50 zł 13 mar, Play 45 zł 14 mar,
-Lidl 62,10 zł 15 mar, Empik 19,90 zł 16 mar,
-Spotify 9,99 zł 17 mar, Apteka Dbam o Zdrowie 41,20 zł 19 mar,
-Prąd 108 zł 20 mar, H&M 67 zł 22 mar,
-Amazon 54,30 zł 25 mar, Ikea 129 zł 27 mar
-```
-
-**Luty:**
-
-```
-Biedronka 58,90 zł 1 lut, Żabka 11,30 zł 3 lut, Orlen 61 zł 4 lut,
-Netflix 15,99 zł 5 lut, Spotify 9,99 zł 5 lut, Uber 14,20 zł 7 lut,
-Siłownia 49 zł 8 lut, Rossmann 33,60 zł 10 lut, Play 45 zł 12 lut,
-Lidl 49,80 zł 13 lut, McDonald's 18,90 zł 14 lut,
-Apteka Dbam o Zdrowie 27,50 zł 16 lut, Empik 44 zł 18 lut,
-Prąd 97 zł 20 lut, Allegro 76,20 zł 22 lut,
-CCC 89 zł 24 lut, Żabka 8,40 zł 26 lut, Ikea 210 zł 27 lut
+Biedronka 58,90 zł 1 kwi, Żabka 11,30 zł 3 kwi, Orlen 61 zł 4 kwi,
+Netflix 15,99 zł 5 kwi, Spotify 9,99 zł 5 kwi, Uber 14,20 zł 7 kwi,
+Siłownia 49 zł 8 kwi, Rossmann 33,60 zł 10 kwi, Play 45 zł 12 kwi,
+Lidl 49,80 zł 13 kwi, McDonald's 18,90 zł 14 kwi,
+Apteka Dbam o Zdrowie 27,50 zł 16 kwi, Empik 44 zł 18 kwi,
+Prąd 97 zł 20 kwi, Allegro 76,20 zł 22 kwi,
+CCC 89 zł 24 kwi, Żabka 8,40 zł 26 kwi, Ikea 210 zł 27 kwi
 ```
 
 ### Wskazówki ogólne
