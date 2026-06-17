@@ -1,6 +1,6 @@
 # Coin Sage — Jak stworzyć aplikację do zarządzania wydatkami w Lovable
 
-Instrukcja krok po kroku, jak zbudować osobisty tracker wydatków domowych z AI w [Lovable](https://lovable.dev) — bez pisania kodu.
+Instrukcja krok po kroku, jak zbudować osobisty tracker wydatków domowych z AI w [Lovable](https://lovable.dev/invite/JO6JTO4) — bez pisania kodu.
 
 **Czas realizacji:** ~20–30 minut
 **Wymagania:** Konto w Lovable (darmowe) — instrukcja wymaga ~15–20 kredytów łącznie (złożone prompty kosztują więcej niż 1 kredyt)
@@ -23,6 +23,7 @@ Instrukcja krok po kroku, jak zbudować osobisty tracker wydatków domowych z AI
 7. [Krok 7: Analiza AI dashboardu (opcjonalny)](#krok-7-analiza-ai-dashboardu-opcjonalny)
 8. [Funkcjonalności aplikacji](#funkcjonalności-aplikacji)
 9. [📋 Przykładowe dane do testowania](#przykładowe-dane-do-testowania)
+10. [🛠️ Przydatne aplikacje](#️-przydatne-aplikacje)
 
 ---
 
@@ -258,7 +259,7 @@ Aktywuj przycisk "+ Dodaj wydatki" w headerze i dodaj analizę AI:
 Dodaj nawigację po miesiącach do dashboardu:
 
 1. W headerze zamień statyczny tekst miesiąca na nawigację:
-   ◀  Kwiecień 2026  ▶
+   ◀  Czerwiec 2026  ▶
    - Lewa strzałka: poprzedni miesiąc
    - Prawa strzałka: następny miesiąc (zablokowana na bieżącym miesiącu)
    - Strzałki w kolorze #2D6A4F, delikatny hover effect
@@ -485,6 +486,42 @@ CCC 89 zł 24 kwi, Żabka 8,40 zł 26 kwi, Ikea 210 zł 27 kwi
 
 ---
 
+## 🛠️ Przydatne aplikacje
+
+Narzędzia, z których korzystam podczas tego webinaru — nie są wymagane do zbudowania aplikacji, ale ułatwiają pracę.
+
+### ShareX — zrzuty ekranu
+
+[ShareX](https://getsharex.com/) — darmowe narzędzie open source (Windows) do robienia i obróbki zrzutów ekranu.
+
+**Po co podczas tego webinaru:** kiedy Lovable wygeneruje coś, co wygląda źle, najszybszą drogą do naprawy jest zrzut ekranu załączony do kolejnego prompta (patrz [Wskazówki ogólne](#wskazówki-ogólne)). ShareX pozwala zrobić to w sekundę i od razu nanieść adnotacje.
+
+- 📸 **Zrzut wybranego obszaru** — przechwyć tylko fragment, który nie działa, zamiast całego ekranu
+- ✏️ **Adnotacje** — strzałki, ramki i podpisy, żeby precyzyjnie wskazać Lovable problem
+- 📋 **Kopiowanie do schowka** — zrzut od razu gotowy do wklejenia w okno prompta (Ctrl+V)
+- ⌨️ **Własne skróty klawiszowe** — np. `Print Screen` do przechwytywania obszaru
+
+> 💡 Alternatywy: wbudowany **Wycinek (Win + Shift + S)** na Windows lub **Cmd + Shift + 4** na macOS — wystarczą, jeśli nie chcesz instalować dodatkowego programu.
+
+### Wispr Flow — dyktowanie głosem (mowa → tekst)
+
+[Wispr Flow](https://wisprflow.ai/r?ADAM23365) — aplikacja zamieniająca mowę na tekst w czasie rzeczywistym, działa w dowolnym polu tekstowym.
+
+**Po co podczas tego webinaru:** gotowe prompty do Lovable zwykle wklejamy z instrukcji lub z innego AI, ale Wispr Flow przydaje się wszędzie tam, gdzie **piszemy własny tekst** — dopytywanie modeli AI w czatach, pisanie maili i ogólnie dowolne pole tekstowe na komputerze. Mówisz zamiast pisać, a aplikacja od razu czyści tekst (interpunkcja, brak "yyy").
+
+- 🎙️ **Dyktowanie w każdej aplikacji** — czaty z AI, maile, dokumenty, każde pole tekstowe
+- ✨ **Automatyczne formatowanie** — dodaje interpunkcję i usuwa wahania
+- 🌍 **Wiele języków** — dyktujesz po polsku i po angielsku
+- ⌨️ **Skrót klawiszowy** — przytrzymaj klawisz, mów, puść — tekst pojawia się sam
+
+### 🌐 Przydatne strony
+
+- **[Dribbble](https://dribbble.com/)** — inspiracja projektami: galeria prac projektantów, świetne źródło pomysłów na układ, kolory i styl interfejsu, zanim zaczniesz budować w Lovable.
+- **[Figma](https://www.figma.com/pl-pl/)** — narzędzie do projektowania interfejsów; przydatne, gdy chcesz najpierw naszkicować wygląd aplikacji albo dopracować detale designu.
+- **[Claude — Design](https://claude.ai/design/)** — tworzenie szablonów stron, prezentacji i wielu innych materiałów z pomocą AI.
+
+---
+
 ## Autor
 
-**Adam Kopeć** — [friendlyai.pl](https://www.friendlyai.pl/) · [YouTube](https://www.youtube.com/@Friendly_AI_PL)
+**Adam Kopeć** — [friendlyai.pl](https://www.friendlyai.pl/) · [YouTube](https://www.youtube.com/@Friendly_AI_PL) · [adam@friendlyai.pl](mailto:adam@friendlyai.pl)
