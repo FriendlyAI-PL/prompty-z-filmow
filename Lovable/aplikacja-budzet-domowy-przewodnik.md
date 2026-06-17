@@ -198,6 +198,8 @@ Wyślij poniższy prompt — Lovable wykryje potrzebę backendu i włączy Cloud
 - Klucz daje dostęp do modeli AI (Google Gemini, GPT) przez wewnętrzny gateway Lovable
 - ⚠️ Darmowy miesięczny limit — po wyczerpaniu: **Settings → Workspace → Usage**
 
+> 💡 **Gdy darmowy limit Lovable się wyczerpie:** możesz podstawić własny klucz API w zakładce **Secrets** (np. [Anthropic](https://console.anthropic.com/settings/keys), OpenAI lub Google) — Lovable użyje go zamiast wbudowanego. Klucza nigdy nie wpisujesz w przeglądarce ani w czacie Lovable — wyłącznie w Secrets, po stronie serwera.
+
 **Co można zmienić:**
 
 - Listę kategorii w prompcie systemowym edge function
@@ -519,6 +521,7 @@ Narzędzia, z których korzystam podczas tego webinaru — nie są wymagane do z
 - **[Dribbble](https://dribbble.com/)** — inspiracja projektami: galeria prac projektantów, świetne źródło pomysłów na układ, kolory i styl interfejsu, zanim zaczniesz budować w Lovable.
 - **[Figma](https://www.figma.com/pl-pl/)** — narzędzie do projektowania interfejsów; przydatne, gdy chcesz najpierw naszkicować wygląd aplikacji albo dopracować detale designu.
 - **[Claude — Design](https://claude.ai/design/)** — tworzenie szablonów stron, prezentacji i wielu innych materiałów z pomocą AI.
+- **[Google Fonts](https://fonts.google.com/)** — biblioteka darmowych fontów; tu podejrzysz i dobierzesz kroje do podmiany `Plus Jakarta Sans` / `Lora` z Kroku 1.
 
 ---
 
