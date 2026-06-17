@@ -3,10 +3,10 @@
 Instrukcja krok po kroku, jak zbudować osobisty tracker wydatków domowych z AI w [Lovable](https://lovable.dev/invite/JO6JTO4) — bez pisania kodu.
 
 **Czas realizacji:** ~20–30 minut
-**Wymagania:** Konto w Lovable (darmowe) — instrukcja wymaga ~15–20 kredytów łącznie (złożone prompty kosztują więcej niż 1 kredyt)
+**Wymagania:** Konto w Lovable (darmowe) — instrukcja wymaga ~15–20 kredytów łącznie. Koszt zależy od prompta: prosty to ~0,5–1 kredyt, złożony znacznie więcej. Najwięcej zużywa backend (baza danych, funkcje za kulisami) — generowanie samego wyglądu stron jest zwykle tańsze w stosunku do efektu. Na darmowym planie (5/dzień) rozłóż pracę na 2–4 dni.
 **Efekt końcowy:** Działająca aplikacja z bazą danych, analizą AI, wykresami i tabelą wydatków
 
-> ⚠️ **Darmowy plan Lovable: 5 kredytów dziennie.** Przed każdym promptem sprawdź stan w **Settings → Workspace → Usage**. Wysłanie prompta przy niewystarczającej liczbie kredytów może przerwać generowanie w połowie i zostawić kod w niespójnym stanie.
+> ⚠️ **Darmowy plan Lovable: 5 kredytów dziennie (max 30/miesiąc).** Niewykorzystane kredyty dzienne nie przechodzą na kolejny dzień. Przed każdym promptem sprawdź stan w **Settings → Plans & credits**. Wysłanie prompta przy niewystarczającej liczbie kredytów może przerwać generowanie w połowie i zostawić kod w niespójnym stanie.
 
 ![Coin Sage — widok główny](images/Coin%20sage%20screenshot.png)
 
@@ -196,7 +196,7 @@ Wyślij poniższy prompt — Lovable wykryje potrzebę backendu i włączy Cloud
 
 - `LOVABLE_API_KEY` pojawia się automatycznie w Secrets — Lovable zarządza nim sam, nigdy go nie wpisujesz
 - Klucz daje dostęp do modeli AI (Google Gemini, GPT) przez wewnętrzny gateway Lovable
-- ⚠️ Darmowy miesięczny limit — po wyczerpaniu: **Settings → Workspace → Usage**
+- ⚠️ Darmowy miesięczny limit — po wyczerpaniu: **Settings → Plans & credits**
 
 > 💡 **Gdy darmowy limit Lovable się wyczerpie:** możesz podstawić własny klucz API w zakładce **Secrets** (np. [Anthropic](https://console.anthropic.com/settings/keys), OpenAI lub Google) — Lovable użyje go zamiast wbudowanego. Klucza nigdy nie wpisujesz w przeglądarce ani w czacie Lovable — wyłącznie w Secrets, po stronie serwera.
 
@@ -485,6 +485,7 @@ CCC 89 zł 24 kwi, Żabka 8,40 zł 26 kwi, Ikea 210 zł 27 kwi
 - **Jeśli Lovable zepsuje coś co działało** — użyj przycisku "Undo" w interfejsie Lovable
 - **Zrzuty ekranu pomagają** — jeśli coś wygląda źle, zrób screenshot i załącz go do następnego prompta
 - **Mniej = więcej** — krótsze, konkretne prompty działają lepiej niż długie opisy
+- **Grupuj drobne zmiany** — żeby oszczędzać kredyty, nie poprawiaj pojedynczo (np. jeden przycisk po drugim), tylko zbierz takie zmiany w jeden prompt: „zmień kolor wszystkich przycisków na…". Jeden prompt zamiast pięciu to realna oszczędność.
 
 ---
 
@@ -492,36 +493,38 @@ CCC 89 zł 24 kwi, Żabka 8,40 zł 26 kwi, Ikea 210 zł 27 kwi
 
 Narzędzia, z których korzystam podczas tego webinaru — nie są wymagane do zbudowania aplikacji, ale ułatwiają pracę.
 
-### ShareX — zrzuty ekranu
+### Zrzuty ekranu
 
-[ShareX](https://getsharex.com/) — darmowe narzędzie open source (Windows) do robienia i obróbki zrzutów ekranu.
+Przydają się, gdy coś wygląda źle — zrzut załączony do kolejnego prompta to najszybsza droga do naprawy (patrz [Wskazówki ogólne](#wskazówki-ogólne)).
 
-**Po co podczas tego webinaru:** kiedy Lovable wygeneruje coś, co wygląda źle, najszybszą drogą do naprawy jest zrzut ekranu załączony do kolejnego prompta (patrz [Wskazówki ogólne](#wskazówki-ogólne)). ShareX pozwala zrobić to w sekundę i od razu nanieść adnotacje.
+- **[ShareX](https://getsharex.com/)** — zrzuty i adnotacje na całym ekranie (Windows, open source). Alternatywa bez instalacji: **Win + Shift + S** (Windows) lub **Cmd + Shift + 4** (macOS).
+- **[FireShot](https://chromewebstore.google.com/detail/take-webpage-screenshots/mcbpblocgmgfnpjjppndjkmgjaogfceg)** — rozszerzenie do przeglądarki; przechwytuje całą stronę z przewijaniem (cały dashboard naraz).
 
-- 📸 **Zrzut wybranego obszaru** — przechwyć tylko fragment, który nie działa, zamiast całego ekranu
-- ✏️ **Adnotacje** — strzałki, ramki i podpisy, żeby precyzyjnie wskazać Lovable problem
-- 📋 **Kopiowanie do schowka** — zrzut od razu gotowy do wklejenia w okno prompta (Ctrl+V)
-- ⌨️ **Własne skróty klawiszowe** — np. `Print Screen` do przechwytywania obszaru
+### Dyktowanie głosem
 
-> 💡 Alternatywy: wbudowany **Wycinek (Win + Shift + S)** na Windows lub **Cmd + Shift + 4** na macOS — wystarczą, jeśli nie chcesz instalować dodatkowego programu.
-
-### Wispr Flow — dyktowanie głosem (mowa → tekst)
-
-[Wispr Flow](https://wisprflow.ai/r?ADAM23365) — aplikacja zamieniająca mowę na tekst w czasie rzeczywistym, działa w dowolnym polu tekstowym.
-
-**Po co podczas tego webinaru:** gotowe prompty do Lovable zwykle wklejamy z instrukcji lub z innego AI, ale Wispr Flow przydaje się wszędzie tam, gdzie **piszemy własny tekst** — dopytywanie modeli AI w czatach, pisanie maili i ogólnie dowolne pole tekstowe na komputerze. Mówisz zamiast pisać, a aplikacja od razu czyści tekst (interpunkcja, brak "yyy").
-
-- 🎙️ **Dyktowanie w każdej aplikacji** — czaty z AI, maile, dokumenty, każde pole tekstowe
-- ✨ **Automatyczne formatowanie** — dodaje interpunkcję i usuwa wahania
-- 🌍 **Wiele języków** — dyktujesz po polsku i po angielsku
-- ⌨️ **Skrót klawiszowy** — przytrzymaj klawisz, mów, puść — tekst pojawia się sam
+- **[Wispr Flow](https://wisprflow.ai/r?ADAM23365)** — mowa → tekst w dowolnym polu (czaty AI, maile, dokumenty); mówisz zamiast pisać, działa po polsku i angielsku.
 
 ### 🌐 Przydatne strony
 
-- **[Dribbble](https://dribbble.com/)** — inspiracja projektami: galeria prac projektantów, świetne źródło pomysłów na układ, kolory i styl interfejsu, zanim zaczniesz budować w Lovable.
-- **[Figma](https://www.figma.com/pl-pl/)** — narzędzie do projektowania interfejsów; przydatne, gdy chcesz najpierw naszkicować wygląd aplikacji albo dopracować detale designu.
-- **[Claude — Design](https://claude.ai/design/)** — tworzenie szablonów stron, prezentacji i wielu innych materiałów z pomocą AI.
-- **[Google Fonts](https://fonts.google.com/)** — biblioteka darmowych fontów; tu podejrzysz i dobierzesz kroje do podmiany `Plus Jakarta Sans` / `Lora` z Kroku 1.
+**Design i inspiracja:**
+
+- **[Dribbble](https://dribbble.com/)** — inspiracja projektami (układ, kolory, styl) przed budową w Lovable.
+- **[Figma](https://www.figma.com/pl-pl/)** — projektowanie i szkicowanie interfejsów.
+- **[Claude — Design](https://claude.ai/design/)** — szablony stron, prezentacji i innych materiałów z pomocą AI.
+- **[Google Fonts](https://fonts.google.com/)** — darmowe fonty do podmiany `Plus Jakarta Sans` / `Lora` z Kroku 1.
+
+**Kolory:**
+
+- **[Coolors](https://coolors.co/)** — generator palet kolorów do podmiany kolorów hex z Kroku 1.
+- **[Image Color Picker](https://imagecolorpicker.com/)** — pipeta online: wyciąga kod hex z wgranego obrazka.
+
+### 🤖 Narzędzia AI
+
+Gotowe prompty do Lovable możesz dopracować lub przetłumaczyć w czacie AI, zanim wkleisz je do projektu.
+
+- **[Claude](https://claude.ai/)** · **[ChatGPT](https://chatgpt.com/)** · **[Gemini](https://gemini.google.com/)** — uniwersalne asystenty AI do pisania i poprawiania promptów.
+- **[Arena](https://arena.ai/)** — wiele modeli w jednym miejscu; darmowa (z limitami), ale „płacisz" tym, że modele uczą się na Twoich zapytaniach i ocenach.
+- **[Venice](https://venice.ai/chat?ref=4uqXqE)** — AI z naciskiem na prywatność i bez restrykcyjnej cenzury; darmowy plan ograniczony, pełny dostęp płatny.
 
 ---
 
