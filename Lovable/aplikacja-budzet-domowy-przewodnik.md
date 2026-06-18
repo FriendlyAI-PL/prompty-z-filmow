@@ -151,6 +151,8 @@ Stack: React + TypeScript + Vite, Tailwind CSS, Recharts
 - ⚠️ Mogą pojawić się ostrzeżenia o bezpieczeństwie RLS — to normalne, bo celowo ustawiamy otwartą politykę (prywatna aplikacja jednego użytkownika)
 - ⚠️ Jeśli transakcje nie zapisują się po odświeżeniu, wyślij: `"Transakcje nie ładują się z bazy po odświeżeniu — sprawdź czy useEffect poprawnie wywołuje supabase.from('transactions').select('*')"`
 
+> ⚠️ **Bezpieczeństwo:** Otwarta RLS jest OK **tylko dla prywatnej aplikacji jednego użytkownika**. Zanim opublikujesz aplikację dla innych albo dodasz cudze dane — najpierw włącz logowanie i zamknij RLS. Pełny dodatek o bezpieczeństwie i RODO (oraz aplikację finansową małej firmy do remiksu) wysyłam po wypełnieniu krótkiej ankiety → [link].
+
 ```
 Dodaj integrację z Supabase, żeby transakcje były zapisywane w bazie danych.
 
