@@ -134,7 +134,9 @@ STRONA "ANALIZA" (/analiza)
 STRONA "USTAWIENIA" (/ustawienia)
 - Nagłówek "Ustawienia" + podtytuł "Zarządzaj swoim profilem
   i celami"
-- Karta "Dane osobowe": pola Wzrost (cm), Waga (kg)
+- Karta "Dane osobowe": pola Wiek, Wzrost (cm), Waga (kg), Cel
+  (dropdown: "Redukcja", "Utrzymanie wagi", "Masa"), pod polami
+  przycisk drugorzędny (outlined) "Przelicz z formuły"
 - Karta "Cele żywieniowe": pola Kalorie dzienne, Białko (g),
   Węglowodany (g), Tłuszcz (g), każde z małym podpisem
   pomocniczym pod polem (np. "Docelowe kalorie dziennie")
@@ -349,6 +351,7 @@ Dodaj ikonę kosza (trash) na końcu każdego wiersza w karcie
 - ⚠️ Wykres może liczyć tydzień od niedzieli zamiast poniedziałku, jeśli chcesz inaczej, wyślij: `"Tydzień na wykresie 'Tygodniowe spożycie kalorii' ma zaczynać się od poniedziałku, nie od niedzieli"`
 - ⚠️ Średnia dzienna makroskładników może dzielić przez 7 nawet gdy tydzień się jeszcze nie skończył, to zaniża wynik, popraw jak w prompcie poniżej
 - ⚠️ "Dni w celu" może liczyć dzień jako "w celu" mimo wyraźnego przekroczenia (np. 3050 kcal przy celu 2670 kcal, czyli +14%), to znak, że Lovable sprawdził tylko dolną granicę (czy najadłeś się wystarczająco), a pominął górną (czy nie przejadłeś się). Wyślij: `"'Dni w celu' liczy dzień jako w celu nawet po sporym przekroczeniu, popraw warunek na dwustronny: |suma_dnia − cel| / cel <= 0.10, obie strony (i niedobór, i nadwyżka) mają się liczyć jako poza celem"`
+- ⚠️ Pierścienie postępu na stronie "Śledzenie" mogą przestać się aktualizować po zbudowaniu tego kroku, Lovable czasem nadpisuje albo odłącza wspólną logikę pobierania dzisiejszych posiłków przy okazji budowania strony Analiza. Wyślij: `"Pierścienie postępu w karcie 'Dzisiejszy postęp' na stronie 'Śledzenie' przestały się aktualizować po dodaniu lub usunięciu posiłku, sprawdź czy logika pobierania i sumowania dzisiejszych posiłków dla tych pierścieni nie została nadpisana albo odłączona przy budowaniu strony Analiza, i napraw, żeby znowu przeliczały się natychmiast po każdej zmianie w tabeli 'meals'"`
 
 ```
 Wypełnij stronę "Analiza" danymi z tabeli "meals":
@@ -391,25 +394,44 @@ Wypełnij stronę "Analiza" danymi z tabeli "meals":
 
 ## Krok 7: Strona Ustawienia
 
-**Co robimy:** Aktywujemy edycję profilu: użytkownik może ręcznie poprawić wyliczone w Kroku 3 cele (wzór jest tylko punktem startowym, nie wyrocznią).
+**Co robimy:** Aktywujemy edycję profilu: użytkownik może ręcznie poprawić wyliczone w Kroku 3 cele (wzór jest tylko punktem startowym, nie wyrocznią), albo poprawić wiek/cel i przeliczyć cele od nowa tą samą formułą co przy onboardingu, np. gdy zmienił się cel albo minął rok.
+
+**Częste problemy Lovable:**
+
+- ⚠️ Przycisk "Przelicz z formuły" może od razu zapisywać wynik do bazy zamiast tylko wypełnić pola formularza, wyślij: `"Przycisk 'Przelicz z formuły' ma tylko wypełnić pola Kalorie/Białko/Węglowodany/Tłuszcz w formularzu, NIE zapisywać nic do bazy, dopóki nie kliknę 'Zapisz zmiany'"`
 
 ```
 Aktywuj stronę "Ustawienia":
 
 1. Przy wejściu na stronę wczytaj aktualny wiersz z tabeli
-   "profile" do formularza
+   "profile" do formularza (wszystkie 8 pól: wiek, wzrost, waga,
+   cel, 4 wyliczone cele)
 
-2. Pola: Wzrost (cm), Waga (kg), Kalorie dzienne, Białko (g),
-   Węglowodany (g), Tłuszcz (g), wszystkie edytowalne ręcznie
-   (użytkownik może nadpisać wyliczone wartości, np. gdy zna
-   swoje realne zapotrzebowanie lepiej niż uproszczony wzór
+2. Pola: Wiek, Wzrost (cm), Waga (kg), Cel, Kalorie dzienne,
+   Białko (g), Węglowodany (g), Tłuszcz (g), wszystkie edytowalne
+   ręcznie (użytkownik może nadpisać wyliczone wartości, np. gdy
+   zna swoje realne zapotrzebowanie lepiej niż uproszczony wzór
    z Kroku 3)
 
-3. Przycisk "Zapisz zmiany": aktualizuje istniejący wiersz
-   w "profile" (UPDATE po id, NIE tworzy nowego wiersza,
-   w tabeli zawsze jest dokładnie jeden wiersz)
+3. Przycisk "Przelicz z formuły" (BEZ wywołania AI, ta sama
+   matematyka co w Kroku 3):
+   - Bierze aktualne wartości z pól Wiek, Wzrost, Waga, Cel
+     (te z formularza, NIE zapisane wcześniej w bazie, żeby
+     przeliczenie uwzględniało niezapisane jeszcze zmiany)
+   - Liczy BMR, TDEE i cel kaloryczny + makroskładniki dokładnie
+     tym samym wzorem co w Kroku 3
+   - Wypełnia pola Kalorie dzienne, Białko, Węglowodany, Tłuszcz
+     nowymi wartościami w formularzu, NIE zapisuje ich jeszcze
+     do bazy, użytkownik widzi wynik i może go ręcznie poprawić
+     przed kliknięciem "Zapisz zmiany"
 
-4. Po zapisie: toast "✓ Zmiany zapisane". Pierścienie postępu
+4. Przycisk "Zapisz zmiany": aktualizuje istniejący wiersz
+   w "profile" (UPDATE po id, NIE tworzy nowego wiersza,
+   w tabeli zawsze jest dokładnie jeden wiersz), zapisuje
+   wszystkie 8 pól z formularza, niezależnie czy zostały
+   przeliczone przyciskiem czy wpisane ręcznie
+
+5. Po zapisie: toast "✓ Zmiany zapisane". Pierścienie postępu
    i wykresy na stronach "Śledzenie" i "Analiza" mają używać
    nowych celów od razu (bez konieczności odświeżania strony)
 ```
