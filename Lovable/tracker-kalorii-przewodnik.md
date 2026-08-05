@@ -209,6 +209,7 @@ zapisywane w bazie danych.
 **Częste problemy Lovable:**
 
 - ⚠️ Jeśli wyniki wyglądają nierealistycznie (np. ujemne wartości węglowodanów przy bardzo niskim celu kalorycznym), wyślij: `"Dodaj dolny limit: cel kaloryczny nie może być niższy niż 1200 kcal, węglowodany nie mogą wyjść poniżej 0"`
+- ⚠️ Jeśli po jakimś czasie pierścienie postępu na stronie "Śledzenie" nagle pokazują 0% mimo normalnie dodanych posiłków, to zwykle NIE błąd w logice pierścieni z Kroku 4, tylko puste (NULL) cele w tabeli "profile" (patrz zabezpieczenie w prompcie Kroku 3 poniżej i w Kroku 4). Jeśli mimo to się zdarzy, sprawdź najpierw właśnie te 4 pola, zanim zaczniesz szukać błędu gdzie indziej
 
 ```
 Aktywuj formularz onboardingu z Kroku 1 razem z logiką obliczeń:
@@ -238,9 +239,14 @@ Aktywuj formularz onboardingu z Kroku 1 razem z logiką obliczeń:
 2. Pokaż wyliczone wartości na ekranie 2/2 onboardingu
    ("Twój spersonalizowany plan")
 
-3. Po kliknięciu "Rozpocznij śledzenie" zapisz nowy wiersz do
-   tabeli "profile" (wiek, wzrost, waga, cel, 4 wyliczone cele)
-   i przekieruj na stronę "Śledzenie"
+3. Po kliknięciu "Rozpocznij śledzenie" zapisz JEDNYM zapytaniem
+   INSERT nowy wiersz do tabeli "profile", wszystkie 8 pól naraz:
+   wiek, wzrost, waga, cel oraz 4 wyliczone cele (daily_calories,
+   daily_protein, daily_carbs, daily_fat). Żadne z tych 4 pól nie
+   może zostać zapisane jako NULL ani puste, to one napędzają
+   pierścienie postępu w Kroku 4, a puste pole zawsze pokaże 0%
+   niezależnie od realnie dodanych posiłków. Po zapisie przekieruj
+   na stronę "Śledzenie"
 
 4. Przycisk "Wstecz" wraca do formularza bez utraty wpisanych
    wcześniej danych
@@ -303,6 +309,14 @@ Aktywuj przycisk "+ Dodaj" w karcie "Dodaj posiłek":
    z profilu, zaokrąglone do %) oraz listę "Dzisiejsze posiłki"
    (nowy wiersz na górze: opis, kalorie, "B: Xg · W: Yg · T: Zg",
    ikona kosza)
+
+   Zabezpieczenie: jeśli cel dzienny z profilu (daily_calories/
+   daily_protein/daily_carbs/daily_fat) okaże się NULL lub 0 (nie
+   powinno się zdarzyć po Kroku 3, ale to jedyny sposób, żeby
+   pierścienie nigdy nie pokazały fałszywego 0% mimo dodanych
+   posiłków), przelicz brakujący cel awaryjnie w locie tym samym
+   wzorem co w Kroku 3, na podstawie wieku/wzrostu/wagi/celu z tego
+   samego wiersza profilu, zamiast dzielić przez NULL/0
 
    Przekroczenie celu: gdy suma > 100% celu, wypełnienie pierścienia
    zatrzymuje się na pełnym okręgu (nie da się narysować więcej niż
